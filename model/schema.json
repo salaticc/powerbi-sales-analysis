@@ -1,0 +1,182 @@
+[
+  {
+    "TableName":"Календарь",
+    "ColumnName":"Дата",
+    "PandasDataType":"datetime64[ns]"
+  },
+  {
+    "TableName":"Календарь",
+    "ColumnName":"Год",
+    "PandasDataType":"Int64"
+  },
+  {
+    "TableName":"Календарь",
+    "ColumnName":"Номер месяца",
+    "PandasDataType":"Int64"
+  },
+  {
+    "TableName":"Календарь",
+    "ColumnName":"Месяц",
+    "PandasDataType":"string"
+  },
+  {
+    "TableName":"Календарь",
+    "ColumnName":"Год-месяц",
+    "PandasDataType":"string"
+  },
+  {
+    "TableName":"Контроль_Продаж",
+    "ColumnName":"Показатель",
+    "PandasDataType":"string"
+  },
+  {
+    "TableName":"Контроль_Продаж",
+    "ColumnName":"Значение",
+    "PandasDataType":"Float64"
+  },
+  {
+    "TableName":"Показатель",
+    "ColumnName":"Показатель",
+    "PandasDataType":"string"
+  },
+  {
+    "TableName":"Показатель",
+    "ColumnName":"Поля: Показатель",
+    "PandasDataType":"string"
+  },
+  {
+    "TableName":"Показатель",
+    "ColumnName":"Заказ Показатель",
+    "PandasDataType":"Int64"
+  },
+  {
+    "TableName":"Продажи",
+    "ColumnName":"Order_ID",
+    "PandasDataType":"Int64"
+  },
+  {
+    "TableName":"Продажи",
+    "ColumnName":"Приоритет",
+    "PandasDataType":"string"
+  },
+  {
+    "TableName":"Продажи",
+    "ColumnName":"Количество",
+    "PandasDataType":"Int64"
+  },
+  {
+    "TableName":"Продажи",
+    "ColumnName":"Выручка",
+    "PandasDataType":"decimal.Decimal"
+  },
+  {
+    "TableName":"Продажи",
+    "ColumnName":"Метод доставки",
+    "PandasDataType":"string"
+  },
+  {
+    "TableName":"Продажи",
+    "ColumnName":"Прибыль",
+    "PandasDataType":"decimal.Decimal"
+  },
+  {
+    "TableName":"Продажи",
+    "ColumnName":"Покупатель",
+    "PandasDataType":"string"
+  },
+  {
+    "TableName":"Продажи",
+    "ColumnName":"Регион",
+    "PandasDataType":"string"
+  },
+  {
+    "TableName":"Продажи",
+    "ColumnName":"Продукт",
+    "PandasDataType":"string"
+  },
+  {
+    "TableName":"Продажи",
+    "ColumnName":"Упаковка продукта",
+    "PandasDataType":"string"
+  },
+  {
+    "TableName":"Продажи",
+    "ColumnName":"Дата заказа",
+    "PandasDataType":"datetime64[ns]"
+  },
+  {
+    "TableName":"СПР_Регионы",
+    "ColumnName":"Регион",
+    "PandasDataType":"string"
+  },
+  {
+    "TableName":"СПР_Регионы",
+    "ColumnName":"Менеджер",
+    "PandasDataType":"string"
+  },
+  {
+    "TableName":"СПР_Регионы",
+    "ColumnName":"Территория карты",
+    "PandasDataType":"string"
+  },
+  {
+    "TableName":"СПР_Сегменты",
+    "ColumnName":"Сегмент покупателя",
+    "PandasDataType":"string"
+  },
+  {
+    "TableName":"СПР_покупатели",
+    "ColumnName":"Покупатель",
+    "PandasDataType":"string"
+  },
+  {
+    "TableName":"СПР_продукты",
+    "ColumnName":"Категория продукта",
+    "PandasDataType":"string"
+  },
+  {
+    "TableName":"СПР_продукты",
+    "ColumnName":"Подкатегория продукта",
+    "PandasDataType":"string"
+  },
+  {
+    "TableName":"СПР_продукты",
+    "ColumnName":"Продукт",
+    "PandasDataType":"string"
+  },
+  {
+    "TableName":"СПР_продукты",
+    "ColumnName":"ABC Выручка за весь период",
+    "PandasDataType":"decimal.Decimal"
+  },
+  {
+    "TableName":"СПР_продукты",
+    "ColumnName":"ABC Доля за весь период",
+    "PandasDataType":"Float64"
+  },
+  {
+    "TableName":"СПР_продукты",
+    "ColumnName":"ABC Группа",
+    "PandasDataType":"string"
+  },
+  {
+    "TableName":"СПР_стоимость_доставки",
+    "ColumnName":"Метод доставки",
+    "PandasDataType":"string"
+  },
+  {
+    "TableName":"СПР_стоимость_доставки",
+    "ColumnName":"Стоимость доставки",
+    "PandasDataType":"decimal.Decimal"
+  },
+  {
+    "TableName":"Связь_Покупатели_Сегменты",
+    "ColumnName":"Покупатель",
+    "PandasDataType":"string"
+  },
+  {
+    "TableName":"Связь_Покупатели_Сегменты",
+    "ColumnName":"Сегмент покупателя",
+    "PandasDataType":"string"
+  }
+]

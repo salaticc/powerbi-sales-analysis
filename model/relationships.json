@@ -1,0 +1,74 @@
+[
+  {
+    "FromTableName":"Продажи",
+    "FromColumnName":"Покупатель",
+    "ToTableName":"СПР_покупатели",
+    "ToColumnName":"Покупатель",
+    "IsActive":1,
+    "Cardinality":"M:1",
+    "CrossFilteringBehavior":"Single",
+    "FromKeyCount":176,
+    "ToKeyCount":null,
+    "RelyOnReferentialIntegrity":0
+  },
+  {
+    "FromTableName":"Связь_Покупатели_Сегменты",
+    "FromColumnName":"Покупатель",
+    "ToTableName":"СПР_покупатели",
+    "ToColumnName":"Покупатель",
+    "IsActive":1,
+    "Cardinality":"M:1",
+    "CrossFilteringBehavior":"Both",
+    "FromKeyCount":176,
+    "ToKeyCount":null,
+    "RelyOnReferentialIntegrity":0
+  },
+  {
+    "FromTableName":"Продажи",
+    "FromColumnName":"Регион",
+    "ToTableName":"СПР_Регионы",
+    "ToColumnName":"Регион",
+    "IsActive":1,
+    "Cardinality":"M:1",
+    "CrossFilteringBehavior":"Single",
+    "FromKeyCount":9,
+    "ToKeyCount":null,
+    "RelyOnReferentialIntegrity":0
+  },
+  {
+    "FromTableName":"Связь_Покупатели_Сегменты",
+    "FromColumnName":"Сегмент покупателя",
+    "ToTableName":"СПР_Сегменты",
+    "ToColumnName":"Сегмент покупателя",
+    "IsActive":1,
+    "Cardinality":"M:1",
+    "CrossFilteringBehavior":"Single",
+    "FromKeyCount":7,
+    "ToKeyCount":null,
+    "RelyOnReferentialIntegrity":0
+  },
+  {
+    "FromTableName":"Продажи",
+    "FromColumnName":"Продукт",
+    "ToTableName":"СПР_продукты",
+    "ToColumnName":"Продукт",
+    "IsActive":1,
+    "Cardinality":"M:1",
+    "CrossFilteringBehavior":"Single",
+    "FromKeyCount":448,
+    "ToKeyCount":null,
+    "RelyOnReferentialIntegrity":0
+  },
+  {
+    "FromTableName":"Продажи",
+    "FromColumnName":"Метод доставки",
+    "ToTableName":"СПР_стоимость_доставки",
+    "ToColumnName":"Метод доставки",
+    "IsActive":1,
+    "Cardinality":"M:1",
+    "CrossFilteringBehavior":"Single",
+    "FromKeyCount":5,
+    "ToKeyCount":null,
+    "RelyOnReferentialIntegrity":0
+  }
+]

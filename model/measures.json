@@ -1,0 +1,135 @@
+[
+  {
+    "TableName":"Продажи",
+    "Name":"Выручка итого",
+    "Expression":"SUM('Продажи'[Выручка])",
+    "DisplayFolder":null,
+    "Description":null
+  },
+  {
+    "TableName":"Продажи",
+    "Name":"Прибыль итого",
+    "Expression":"SUM('Продажи'[Прибыль])",
+    "DisplayFolder":null,
+    "Description":null
+  },
+  {
+    "TableName":"Продажи",
+    "Name":"Количество заказов",
+    "Expression":"DISTINCTCOUNT('Продажи'[Order_ID])",
+    "DisplayFolder":null,
+    "Description":null
+  },
+  {
+    "TableName":"Продажи",
+    "Name":"Активные покупатели",
+    "Expression":"DISTINCTCOUNT('Продажи'[Покупатель])",
+    "DisplayFolder":null,
+    "Description":null
+  },
+  {
+    "TableName":"Продажи",
+    "Name":"Средний чек",
+    "Expression":"\nDIVIDE([Выручка итого], [Количество заказов])",
+    "DisplayFolder":null,
+    "Description":null
+  },
+  {
+    "TableName":"Продажи",
+    "Name":"Рентабельность",
+    "Expression":"\nDIVIDE([Прибыль итого], [Выручка итого])",
+    "DisplayFolder":null,
+    "Description":null
+  },
+  {
+    "TableName":"Продажи",
+    "Name":"Расходы на доставку",
+    "Expression":"\nSUMX(\n    'Продажи',\n    RELATED('СПР_стоимость_доставки'[Стоимость доставки])\n)",
+    "DisplayFolder":null,
+    "Description":null
+  },
+  {
+    "TableName":"Продажи",
+    "Name":"Доля логистики",
+    "Expression":"\nDIVIDE([Расходы на доставку], [Выручка итого])",
+    "DisplayFolder":null,
+    "Description":null
+  },
+  {
+    "TableName":"Продажи",
+    "Name":"ABC Накопленная доля",
+    "Expression":"\nIF(\n    ISINSCOPE('СПР_продукты'[Продукт])\n        && [Выручка итого] > 0,\n    SELECTEDVALUE(\n        'СПР_продукты'[ABC Доля за весь период]\n    )\n)",
+    "DisplayFolder":null,
+    "Description":null
+  },
+  {
+    "TableName":"Продажи",
+    "Name":"ABC Класс",
+    "Expression":"\nIF(\n    ISINSCOPE('СПР_продукты'[Продукт])\n        && [Выручка итого] > 0,\n    SELECTEDVALUE('СПР_продукты'[ABC Группа])\n)",
+    "DisplayFolder":null,
+    "Description":null
+  },
+  {
+    "TableName":"Продажи",
+    "Name":"ABC Цвет фона",
+    "Expression":"\nSWITCH(\n    [ABC Класс],\n    \"A\", \"#DBEAFE\",\n    \"B\", \"#EFF6FF\",\n    \"C\", \"#F8FAFC\",\n    BLANK()\n)",
+    "DisplayFolder":null,
+    "Description":null
+  },
+  {
+    "TableName":"Продажи",
+    "Name":"Убыточные заказы",
+    "Expression":"\nVAR OrderParts =\n    ADDCOLUMNS(\n        SUMMARIZE(\n            'Продажи',\n            'СПР_Регионы'[Регион],\n            'Продажи'[Order_ID]\n        ),\n        \"@Profit\", [Прибыль итого]\n    )\nVAR LossParts =\n    FILTER(OrderParts, [@Profit] < 0)\nRETURN\n    COUNTROWS(\n        DISTINCT(\n            SELECTCOLUMNS(\n                LossParts,\n                \"OrderID\", 'Продажи'[Order_ID]\n            )\n        )\n    )",
+    "DisplayFolder":null,
+    "Description":null
+  },
+  {
+    "TableName":"Продажи",
+    "Name":"Прибыль убыточных заказов",
+    "Expression":"\nVAR OrderParts =\n    ADDCOLUMNS(\n        SUMMARIZE(\n            'Продажи',\n            'СПР_Регионы'[Регион],\n            'Продажи'[Order_ID]\n        ),\n        \"@Profit\", [Прибыль итого]\n    )\nRETURN\n    SUMX(\n        FILTER(OrderParts, [@Profit] < 0),\n        [@Profit]\n    )",
+    "DisplayFolder":null,
+    "Description":null
+  },
+  {
+    "TableName":"Продажи",
+    "Name":"Цвет прибыли региона",
+    "Expression":"\nIF(\n    [Прибыль итого] < 0,\n    \"#B42318\",\n    \"#2563EB\"\n)",
+    "DisplayFolder":null,
+    "Description":null
+  },
+  {
+    "TableName":"Продажи",
+    "Name":"Цвет убытков",
+    "Expression":"\nIF(\n    [Прибыль убыточных заказов] < 0,\n    \"#B42318\",\n    \"#202833\"\n)",
+    "DisplayFolder":null,
+    "Description":null
+  },
+  {
+    "TableName":"Продажи",
+    "Name":"Заголовок динамики",
+    "Expression":"\nVAR MetricName =\n    MAX('Показатель'[Показатель])\nRETURN\n    IF(\n        COUNTROWS('Показатель') = 1,\n        MetricName & \" по месяцам\",\n        \"Динамика показателей по месяцам\"\n    )",
+    "DisplayFolder":null,
+    "Description":null
+  },
+  {
+    "TableName":"Продажи",
+    "Name":"Заголовок продуктов",
+    "Expression":"\nIF(\n    COUNTROWS('Показатель') = 1,\n    MAX('Показатель'[Показатель])\n        & \" по категориям и продуктам\",\n    \"Показатели по категориям и продуктам\"\n)",
+    "DisplayFolder":null,
+    "Description":null
+  },
+  {
+    "TableName":"Продажи",
+    "Name":"Заголовок сегментов",
+    "Expression":"\nIF(\n    COUNTROWS('Показатель') = 1,\n    MAX('Показатель'[Показатель])\n        & \" по сегментам\",\n    \"Показатели по сегментам\"\n)",
+    "DisplayFolder":null,
+    "Description":null
+  },
+  {
+    "TableName":"Продажи",
+    "Name":"Значение показателя",
+    "Expression":"\nVAR MetricName =\n    MAX('Показатель'[Показатель])\nRETURN\n    IF(\n        COUNTROWS('Показатель') = 1,\n        SWITCH(\n            MetricName,\n            \"Выручка\", [Выручка итого],\n            \"Прибыль\", [Прибыль итого],\n            \"Рентабельность\", [Рентабельность],\n            \"Покупатели\", [Активные покупатели],\n            \"Средний чек\", [Средний чек],\n            \"Доставка\", [Расходы на доставку],\n            BLANK()\n        )\n    )",
+    "DisplayFolder":null,
+    "Description":null
+  }
+]

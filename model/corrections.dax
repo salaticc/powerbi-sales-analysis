@@ -1,0 +1,22 @@
+// Предлагаемые меры для применения и проверки в Power BI Desktop.
+// В текущем контексте сначала агрегируется Order_ID, а не часть Order_ID × Регион.
+Убыточные заказы по итогу =
+VAR OrdersWithProfit =
+    ADDCOLUMNS(VALUES('Продажи'[Order_ID]), "@Profit", CALCULATE([Прибыль итого]))
+RETURN COUNTROWS(FILTER(OrdersWithProfit, [@Profit] < 0))
+
+Прибыль убыточных заказов по итогу =
+VAR OrdersWithProfit =
+    ADDCOLUMNS(VALUES('Продажи'[Order_ID]), "@Profit", CALCULATE([Прибыль итого]))
+RETURN SUMX(FILTER(OrdersWithProfit, [@Profit] < 0), [@Profit])
+
+// Сценарная альтернатива: только если бизнес подтвердит тариф за заказ/метод.
+Доставка по заказам и методам =
+SUMX(
+    SUMMARIZE('Продажи', 'Продажи'[Order_ID], 'Продажи'[Метод доставки]),
+    VAR MethodName = 'Продажи'[Метод доставки]
+    RETURN LOOKUPVALUE(
+        'СПР_стоимость_доставки'[Стоимость доставки],
+        'СПР_стоимость_доставки'[Метод доставки], MethodName
+    )
+)

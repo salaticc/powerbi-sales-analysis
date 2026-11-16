@@ -1,0 +1,54 @@
+{
+  "Строк продаж": 730,
+  "Уникальных заказов": 571,
+  "Уникальных покупателей": 173,
+  "Выручка": 1103256.31,
+  "Прибыль": 253784.61,
+  "margin_pct": 23.003232131978468,
+  "mean_order_value": 1932.1476532399302,
+  "date_min": "2022-01-01 00:00:00",
+  "date_max": "2022-04-29 00:00:00",
+  "control_checks": [
+    {
+      "metric": "Строк продаж",
+      "stored_control": 730.0,
+      "recomputed_python": 730.0,
+      "matches": true
+    },
+    {
+      "metric": "Уникальных заказов",
+      "stored_control": 571.0,
+      "recomputed_python": 571.0,
+      "matches": true
+    },
+    {
+      "metric": "Уникальных покупателей",
+      "stored_control": 173.0,
+      "recomputed_python": 173.0,
+      "matches": true
+    },
+    {
+      "metric": "Выручка",
+      "stored_control": 1103256.31,
+      "recomputed_python": 1103256.31,
+      "matches": true
+    },
+    {
+      "metric": "Прибыль",
+      "stored_control": 253784.61,
+      "recomputed_python": 253784.61,
+      "matches": true
+    }
+  ],
+  "measures": 19,
+  "report_pages": 4,
+  "negative_total_profit_orders": 277,
+  "orders_with_any_negative_region_part": 278,
+  "orders_in_multiple_regions": 4,
+  "calendar_relationship_present": false,
+  "shipping_by_line_as_original_dax": 4405.0,
+  "shipping_by_order_method_alternative": 3695.0,
+  "pbix_sha256": "d93449bfd85079eb4bd7796175fb3fa26a1fab4fdb402cd9dab9336d10c1e91a",
+  "currency": "not specified in source; no currency symbol invented",
+  "verification": "Python arithmetic and model metadata; native Power BI rendering and DAX filter execution were not performed"
+}
